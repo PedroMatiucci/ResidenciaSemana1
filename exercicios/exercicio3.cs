@@ -17,9 +17,41 @@ namespace exercicio3
         enum Tipo { Isoceles, Escaleno, Equilatero };
         public Triangulo(Vertice a, Vertice b, Vertice c)
         {
-            this.a = a;
-            this.b = b;
-            this.c = c;
+            try
+            {
+                double maior;
+                double soma_menores;
+                if (a.distancia() > b.distancia() & a.distancia() > c.distancia())
+                {
+                    maior = a.distancia();
+                    soma_menores = b.distancia() + c.distancia();
+                }
+                else if (b.distancia() > c.distancia())
+                {
+                    maior = b.distancia();
+                    soma_menores = a.distancia() + c.distancia();
+
+                }
+                else
+                {
+                    maior = c.distancia();
+                    soma_menores = b.distancia() + a.distancia();
+
+                }
+                if (soma_menores > maior)
+                {
+                    this.a = a;
+                    this.b = b;
+                    this.c = c;
+                }
+                else
+                {
+                    throw new ImpossibleTriangleException("Triangulo Invalido");
+
+                }
+            }
+            catch (ImpossibleTriangleException ex) { Console.WriteLine(ex); }
+
         }
 
         public Vertice A { get { return a; } }
@@ -63,6 +95,15 @@ namespace exercicio3
     }
 
 
+}
+
+public class ImpossibleTriangleException : Exception
+{
+    public ImpossibleTriangleException(String message)
+        : base(message)
+    {
+
+    }
 }
 
 
