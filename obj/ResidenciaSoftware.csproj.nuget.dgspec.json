@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Carla\\Source\\Repos\\PedroMatiucci\\ResidenciaSoftware\\ResidenciaSoftware.csproj": {}
+    "C:\\Users\\Carla\\source\\repos\\PedroMatiucci\\ResidenciaSoftware\\ResidenciaSoftware.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Carla\\Source\\Repos\\PedroMatiucci\\ResidenciaSoftware\\ResidenciaSoftware.csproj": {
+    "C:\\Users\\Carla\\source\\repos\\PedroMatiucci\\ResidenciaSoftware\\ResidenciaSoftware.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Carla\\Source\\Repos\\PedroMatiucci\\ResidenciaSoftware\\ResidenciaSoftware.csproj",
+        "projectUniqueName": "C:\\Users\\Carla\\source\\repos\\PedroMatiucci\\ResidenciaSoftware\\ResidenciaSoftware.csproj",
         "projectName": "ResidenciaSoftware",
-        "projectPath": "C:\\Users\\Carla\\Source\\Repos\\PedroMatiucci\\ResidenciaSoftware\\ResidenciaSoftware.csproj",
+        "projectPath": "C:\\Users\\Carla\\source\\repos\\PedroMatiucci\\ResidenciaSoftware\\ResidenciaSoftware.csproj",
         "packagesPath": "C:\\Users\\Carla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Carla\\Source\\Repos\\PedroMatiucci\\ResidenciaSoftware\\obj\\",
+        "outputPath": "C:\\Users\\Carla\\source\\repos\\PedroMatiucci\\ResidenciaSoftware\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
