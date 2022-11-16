@@ -1,0 +1,15 @@
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\bin\Debug\net7.0\ResidenciaSoftware.exe
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\bin\Debug\net7.0\ResidenciaSoftware.deps.json
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\bin\Debug\net7.0\ResidenciaSoftware.runtimeconfig.json
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\bin\Debug\net7.0\ResidenciaSoftware.dll
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\bin\Debug\net7.0\ResidenciaSoftware.pdb
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\obj\Debug\net7.0\ResidenciaSoftware.csproj.AssemblyReference.cache
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\obj\Debug\net7.0\ResidenciaSoftware.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\obj\Debug\net7.0\ResidenciaSoftware.AssemblyInfoInputs.cache
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\obj\Debug\net7.0\ResidenciaSoftware.AssemblyInfo.cs
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\obj\Debug\net7.0\ResidenciaSoftware.csproj.CoreCompileInputs.cache
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\obj\Debug\net7.0\ResidenciaSoftware.dll
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\obj\Debug\net7.0\refint\ResidenciaSoftware.dll
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\obj\Debug\net7.0\ResidenciaSoftware.pdb
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\obj\Debug\net7.0\ResidenciaSoftware.genruntimeconfig.cache
+C:\Users\Carla\Source\Repos\PedroMatiucci\ResidenciaSoftware\obj\Debug\net7.0\ref\ResidenciaSoftware.dll
