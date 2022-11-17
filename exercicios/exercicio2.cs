@@ -1,21 +1,5 @@
 namespace exercicio2
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Vertice teste = new Vertice(5, 10);
-            Console.WriteLine(teste.distancia());
-            Console.ReadKey();
-            teste.move(3, 2);
-            Console.WriteLine(teste.distancia());
-            Console.WriteLine(teste.iguais());
-            teste.move(2, 2);
-            Console.WriteLine(teste.iguais());
-            Console.ReadKey();
-        }
-    }
-
 
     public class Vertice
     {

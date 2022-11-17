@@ -1,23 +1,5 @@
-using exercicio2;
-using exercicio3;
-
 namespace exercicio1
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // Piramide teste = new Piramide(2);
-            // teste.desenha(teste.Tamanho);
-            // Console.ReadKey();
-            Vertice a = new Vertice(0, 0);
-            Vertice b= new Vertice(0, 4);
-            Vertice c = new Vertice(2, 2);
-            Triangulo tri = new Triangulo(a, b, c);
-            Triangulo tri2 = new Triangulo(b, a, c);
-            tri.Iguais(tri, tri2);
-        }
-    }
 
     public class Piramide
     {
@@ -25,53 +7,39 @@ namespace exercicio1
 
         public Piramide(int tamanho)
         {
-            try
-            {
-                if (tamanho < 0) {
-                    throw new InvalidNumberException("Por favor insira um numero maior que zero");
-                }
-                else {
-                    this.tamanho = tamanho;
-                }
-            }
-            catch(InvalidNumberException e) { Console.WriteLine(e); }
-            {
-
-            }
+            this.tamanho = tamanho;
         }
 
-        public int Tamanho { get { return tamanho; } }
-
-        public void desenha(int tamanho)
+        public int Tamanho
         {
-            for (int numero_linhas = 0; numero_linhas < tamanho + 1; numero_linhas++)
+            get { return tamanho; }
+            set
             {
-                int x = 1;
-                for (int j = 1; j < numero_linhas * 2; j++)
-                {
-                    if (j > numero_linhas)
-                    {
-                        Console.Write(numero_linhas - x);
-                        x++;
-                    }
-                    else
-                    {
-                        Console.Write(j);
-                    }
-                }
-                Console.WriteLine(" ");
-                Console.ReadKey();
+                if (value <= 0)
+                    throw new InvalidNumberExeption("O tamanho deve ser maior que zero");
+                tamanho = value;
+            }
+        }
+
+        public void Desenha()
+        {
+            for (int numero_linhas = 0; numero_linhas <= tamanho; numero_linhas++)
+            {
+                for (int j = 0; j < tamanho - 1; j++)
+                    Console.Write(" ");
+
+                for (int j = 1; j <= numero_linhas; j++)
+                    Console.Write(j);
+
+                for (int j = numero_linhas - 1; j >= 1; j--)
+                    Console.Write(j);
+
+                Console.WriteLine();
 
             }
-            Console.ReadKey();
+
         }
     }
 }
-public class InvalidNumberException : Exception
-{
-    public InvalidNumberException(String message)
-        : base(message)
-    {
 
-    }
-}
+    
