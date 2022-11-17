@@ -1,12 +1,8 @@
-﻿using exercicio2;
+﻿using exercicio1;
+using exercicio2;
 
 namespace exercicio3
 {
-    internal class exercicio3
-    {
-
-    }
-
     public class Triangulo
     {
         private Vertice a;
@@ -14,56 +10,65 @@ namespace exercicio3
         private Vertice c;
         public double perimetro;
         public double area;
-        enum Tipo { Isoceles, Escaleno, Equilatero };
         public Triangulo(Vertice a, Vertice b, Vertice c)
         {
-            try
-            {
-                double maior;
-                double soma_menores;
-                if (a.distancia() > b.distancia() & a.distancia() > c.distancia())
-                {
-                    maior = a.distancia();
-                    soma_menores = b.distancia() + c.distancia();
-                }
-                else if (b.distancia() > c.distancia())
-                {
-                    maior = b.distancia();
-                    soma_menores = a.distancia() + c.distancia();
-
-                }
-                else
-                {
-                    maior = c.distancia();
-                    soma_menores = b.distancia() + a.distancia();
-
-                }
-                if (soma_menores > maior)
-                {
-                    this.a = a;
-                    this.b = b;
-                    this.c = c;
-                }
-                else
-                {
-                    throw new ImpossibleTriangleException("Triangulo Invalido");
-
-                }
-            }
-            catch (ImpossibleTriangleException ex) { Console.WriteLine(ex); }
-
+            this.a = a;
+            this.b = b;
+            this.c = c;
         }
 
-        public Vertice A { get { return a; } }
-        public Vertice B { get { return b; } }
-        public Vertice C { get { return c; } }
+        public Vertice A
+        {
+            get { return a; }
+            private set
+            {
+                if (VerificaTriangulo())
+                {
+                    a = value;
+                }
+                else
+                {
+                    throw new ImpossibleTriangleExeption("Este Triangulo e Impossivel");
+                }
+            }
+        }
+        public Vertice B
+        {
+            get { return b; }
+            private set
+            {
+                if (VerificaTriangulo())
+                {
+                    b = value;
+                }
+                else
+                {
+                    throw new ImpossibleTriangleExeption("Este Triangulo e Impossivel");
+                }
+            }
+        }
+        public Vertice C
+        {
+            get { return c; }
+            private set
+            {
+                if (VerificaTriangulo())
+                {
+                    c = value;
+                }
+                else
+                {
+                    throw new ImpossibleTriangleExeption("Este Triangulo e Impossivel");
+                }
+            }
+        }
         public double Perimetro
         {
             get
             {
                 return perimetro;
             }
-            set { perimetro = A.distancia() + B.distancia() + C.distancia(); }
+            set { perimetro = A.Distancia(B) + B.Distancia(C) + C.Distancia(A); }
         }
         public double Area
         {
@@ -73,37 +78,54 @@ namespace exercicio3
             }
             set
             {
-                double s = perimetro / 2;
-                area = Math.Sqrt(s * (s - A.distancia()) * (s - B.distancia()) * (s - C.distancia()));
+                double s = Perimetro / 2;
+                area = Math.Sqrt(s * (s - A.Distancia(B)) * (s - B.Distancia(C)) * (s - C.Distancia(A)));
             }
         }
 
 
 
-        public bool Iguais(dynamic triangulo1, dynamic triangulo2)
+        public override bool Equals(object? obj)
         {
-            if (triangulo1.A == triangulo2.A & triangulo1.B == triangulo2.B & triangulo1.C == triangulo2.C)
+            return obj is Triangulo triangulo &&
+            this.A.Distancia(this.B) == triangulo.A.Distancia(triangulo.B) &&
+            this.A.Distancia(this.B) == triangulo.A.Distancia(triangulo.C) &&
+            this.A.Distancia(this.B) == triangulo.B.Distancia(triangulo.C) &&
+            this.B.Distancia(this.C) == triangulo.A.Distancia(triangulo.B) &&
+            this.B.Distancia(this.C) == triangulo.A.Distancia(triangulo.C) &&
+            this.B.Distancia(this.C) == triangulo.C.Distancia(triangulo.B) &&
+            this.C.Distancia(this.A) == triangulo.A.Distancia(triangulo.B) &&
+            this.C.Distancia(this.A) == triangulo.B.Distancia(triangulo.C) &&
+            this.C.Distancia(this.A) == triangulo.C.Distancia(triangulo.A);
+        }
+
+        private bool VerificaTriangulo()
+        {
+            double maior_lado = 0;
+            double soma_menores = 0;
+            if (A.Distancia(B) == B.Distancia(C) && B.Distancia(C) == C.Distancia(A))
             {
                 return true;
             }
+            else if (A.Distancia(B) > B.Distancia(C) && A.Distancia(B) > C.Distancia(A))
+            {
+                maior_lado = A.Distancia(B);
+                soma_menores = A.Distancia(C) + B.Distancia(C);
+            }
+            else if (B.Distancia(C) > C.Distancia(A))
+            {
+                maior_lado = B.Distancia(C);
+                soma_menores += C.Distancia(A) + A.Distancia(B);
+            }
             else
             {
-                return false;
+                maior_lado = C.Distancia(A);
+                soma_menores += C.Distancia(B) + A.Distancia(B);
             }
-
+            return maior_lado > soma_menores;
         }
     }
 
 
 }
-
-public class ImpossibleTriangleException : Exception
-{
-    public ImpossibleTriangleException(String message)
-        : base(message)
-    {
-
-    }
-}
-
 

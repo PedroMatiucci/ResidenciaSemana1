@@ -11,29 +11,29 @@ namespace exercicio2
             this.x = x;
             this.y = y;
         }
-        public int X { get { return x; } }
-        public int Y { get { return y; } }
+        public int X { get { return x; } private set { } }
+        public int Y { get { return y; } private set { } }
 
-        public double distancia()
+        public double Distancia(Vertice outro)
         {
-            int sum = 0;
-            for (int i = 0; i < x + 1; i++)
-            {
-                int d = x - y;
-                sum = sum + d * d;
-            }
-            return Math.Sqrt(sum);
+            double distancia_x = (this.X - outro.X) * (this.X - outro.X);
+            double distancia_y = (this.Y - outro.Y) * (this.Y - outro.Y);
+
+            return Math.Sqrt(distancia_x + distancia_y);
         }
 
-        public void move(int x, int y)
+        public void Move(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            X = x;
+            Y = y;
         }
 
-        public bool iguais()
+        public override bool Equals(object? obj)
         {
-            return x == y;
+            return obj is Vertice vertice &&
+                this.X == vertice.X &&
+                this.Y == vertice.Y;
+
         }
 
 
