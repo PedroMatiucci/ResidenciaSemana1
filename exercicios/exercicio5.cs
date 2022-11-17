@@ -12,9 +12,9 @@ namespace ResidenciaSoftware.exercicios
         {
             this.inicio = inicio;
             this.final = final;
-            if (Inicio < Final)
+            if (Inicio > Final)
             {
-                throw new InvalidNumberExeption("Data Final Maior Do Que A Inicial");
+                throw new InvalidNumberException("Data Final Maior Do Que A Inicial");
             }
         }
 

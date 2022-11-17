@@ -16,7 +16,7 @@ namespace exercicio1
             set
             {
                 if (value <= 0)
-                    throw new InvalidNumberExeption("O tamanho deve ser maior que zero");
+                    throw new InvalidNumberException("O tamanho deve ser maior que zero");
                 tamanho = value;
             }
         }

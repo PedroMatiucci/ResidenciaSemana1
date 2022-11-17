@@ -1,9 +1,9 @@
 ﻿namespace exercicio1
 {
     [Serializable]
-    internal class InvalidNumberExeption : Exception
+    internal class InvalidNumberException : Exception
     {
-        public InvalidNumberExeption(string? message) : base(message)
+        public InvalidNumberException(string? message) : base(message)
         {
 
             {
